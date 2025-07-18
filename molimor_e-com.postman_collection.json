@@ -1,0 +1,3975 @@
+{
+	"info": {
+		"_postman_id": "f310a13f-81f4-4258-b607-f856dd1cf374",
+		"name": "molimor_e-com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31760658",
+		"_collection_link": "https://gold-meteor-655166.postman.co/workspace/Code-Smith-Info-Soft~aa3131f0-a816-47aa-9b58-0cd1ff186a7a/collection/31760658-f310a13f-81f4-4258-b607-f856dd1cf374?action=share&source=collection_link&creator=31760658"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fname\": \"user\",\r\n    //lname:usear,\r\n    \"email\": \"hastighevariya29@gmail.com\",\r\n    //mobile:9876543219,\r\n    \"password\": \"123456\"\r\n    //gender:Male\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"email\" : \"hastigevariya29@gmail.com\",\r\n \"password\" : \"123456789\"   \r\n} // user\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login?lang=in",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "in"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "adminLogin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"email\" : \"admin@gmail.com\",\r\n \"password\" : \"123456\",\r\n \"fcm\" : \"jdfdsbfbdsfy\"\r\n} // admin",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/user/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"user",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDY2ODc2NDcyMTgsImlhdCI6MTc0NjY4NzY0NywiZXhwIjoxNzQ5Mjc5NjQ3LCJpc3MiOiJ0cmFja2luZyJ9.4BUQ9wDcJWFXWAaBWjrLAGIs1RfXPrxP4KT9gGZErqQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://molimor-e-com.onrender.com/api/user/profile?lang=hi",
+							"protocol": "https",
+							"host": [
+								"molimor-e-com",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProfile",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYyNTUyNjIyNDQsImlhdCI6MTc0NjI1NTI2MiwiZXhwIjoxNzQ4ODQ3MjYyLCJpc3MiOiJ0cmFja2luZyJ9.RwkFcl1GN21hm23B3pGVSkV8eUIF4HPrKRryrof6L9Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fname",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "admin1",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "1111111111",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "jkdhfjk",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "indi",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "guj",
+									"type": "text"
+								},
+								{
+									"key": "pincode",
+									"value": "6576",
+									"type": "text"
+								},
+								{
+									"key": "profilePhoto",
+									"type": "file",
+									"src": "postman-cloud:///1ef6b886-d887-4b40-9b29-1111a4fd1578"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/updateProfile?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"updateProfile"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "googleURL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGY0ODAwNjNiOGIzODMyZjkzZWJlNSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU4MzIxNzUzNTEsImlhdCI6MTc0NTgzMjE3NSwiZXhwIjoxNzQ4NDI0MTc1LCJpc3MiOiJ0cmFja2luZyJ9.IIeuHw-dmWuE6W7mNfPiDDPM3U4tC4aCfiYPFpGuICk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/getGoogleOAuthUrl?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"getGoogleOAuthUrl"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "googleLlogin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGY0ODAwNjNiOGIzODMyZjkzZWJlNSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU4MzIxNzUzNTEsImlhdCI6MTc0NTgzMjE3NSwiZXhwIjoxNzQ4NDI0MTc1LCJpc3MiOiJ0cmFja2luZyJ9.IIeuHw-dmWuE6W7mNfPiDDPM3U4tC4aCfiYPFpGuICk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\" : \"4%2F0Ab_5qllSncGK0cndDUdvbG_4Y33oIci6c1AxUaax9DMDDakQg1QbcK2VzgbzFKE-G_5GNQ\"\r\n}\r\n\r\n// http://localhost:3000/start?code=4%2F0Ab_5qlkygg_lQ3z3-7ACYJa75T91LhEJL35eTQrQ_C_A4ERCY9SLvEtBGkN7EdDBl9fm1g&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none\r\n// 4%2F0Ab_5qlkygg_lQ3z3-7ACYJa75T91LhEJL35eTQrQ_C_A4ERCY9SLvEtBGkN7EdDBl9fm1g",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/googleOAuthLogin?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"googleOAuthLogin"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "facebookURL",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGY0ODAwNjNiOGIzODMyZjkzZWJlNSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU4MzIxNzUzNTEsImlhdCI6MTc0NTgzMjE3NSwiZXhwIjoxNzQ4NDI0MTc1LCJpc3MiOiJ0cmFja2luZyJ9.IIeuHw-dmWuE6W7mNfPiDDPM3U4tC4aCfiYPFpGuICk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/user/getFacebookOAuthUrl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"getFacebookOAuthUrl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "facebookOAuthLogin",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGY0ODAwNjNiOGIzODMyZjkzZWJlNSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU4MzIxNzUzNTEsImlhdCI6MTc0NTgzMjE3NSwiZXhwIjoxNzQ4NDI0MTc1LCJpc3MiOiJ0cmFja2luZyJ9.IIeuHw-dmWuE6W7mNfPiDDPM3U4tC4aCfiYPFpGuICk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"code\": \"AQDzl1UGhq90HPmhinHoSyy8SOm3sl83GwXeHoU8eIU4G_5LlYoY7ZZ9Hx0zLhENF2js2BzYuBNv-Od4LE0EcZwaUMCcvTKAJJWwJy9PDtWxq8v5N246faX4QIpuGFcPBqHBJz967QY_kyzkgjaUJ8oeTPQECP2dLN9ZH3gj8WoiaZ1odpYKSmxaGBn74kmf0ZrVhBcExFG_PLB2CC5UzW1datijtfvE9Rg_17kCZl_l2fE5746CrDkHhCBNXD20bi_zNxpUO1Kg591jTluqLu7UbAEQD_-m9-b36Oh_e3GMrK-mJIvDRdSAb4x6MfWnsmAMgKMCPPEkb1ZgMhZG9w_guH5wv50YEgMT2VBqe7yxn8-YCku-J_TyyTP2479x9llS8wCqo6kkMuIwLxJgO6VQcFkHHT7uAnQVu7jYe8BpWQ\"\r\n  }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/facebookOAuthLogin?lange=en",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"facebookOAuthLogin"
+							],
+							"query": [
+								{
+									"key": "lange",
+									"value": "en"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYyNTUyNjIyNDQsImlhdCI6MTc0NjI1NTI2MiwiZXhwIjoxNzQ4ODQ3MjYyLCJpc3MiOiJ0cmFja2luZyJ9.RwkFcl1GN21hm23B3pGVSkV8eUIF4HPrKRryrof6L9Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/getAllUsers?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"getAllUsers"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYyNTUyNjIyNDQsImlhdCI6MTc0NjI1NTI2MiwiZXhwIjoxNzQ4ODQ3MjYyLCJpc3MiOiJ0cmFja2luZyJ9.RwkFcl1GN21hm23B3pGVSkV8eUIF4HPrKRryrof6L9Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/getUserById/6810960db0741d6b8fee7bad?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"getUserById",
+								"6810960db0741d6b8fee7bad"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYyNTUyNjIyNDQsImlhdCI6MTc0NjI1NTI2MiwiZXhwIjoxNzQ4ODQ3MjYyLCJpc3MiOiJ0cmFja2luZyJ9.RwkFcl1GN21hm23B3pGVSkV8eUIF4HPrKRryrof6L9Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fname ",
+									"value": "user ",
+									"type": "text"
+								},
+								{
+									"key": "lname",
+									"value": "user1",
+									"type": "text"
+								},
+								{
+									"key": "mobile",
+									"value": "3333445567",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "text"
+								},
+								{
+									"key": "profilePhoto",
+									"type": "file",
+									"src": "postman-cloud:///1ef6b886-d887-4b40-9b29-1111a4fd1578"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/updateUserById/6810960db0741d6b8fee7bad?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"updateUserById",
+								"6810960db0741d6b8fee7bad"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveUserById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMjc1NDQ1NDUsImlhdCI6MTc0NjAyNzU0NCwiZXhwIjoxNzQ4NjE5NTQ0LCJpc3MiOiJ0cmFja2luZyJ9.PtLZ30SnRFDIKXLykIvbQT8BmeP0rYPO1Kaql7r24Z4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/inActiveUserById/681249b229ebb374c86d5054?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"inActiveUserById",
+								"681249b229ebb374c86d5054"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addSubscribeUser",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"hastigevariya29@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/addSubscribeUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"addSubscribeUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllSubscribedUsers",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/user/admin/getAllSubscribedUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"admin",
+								"getAllSubscribedUsers"
+							],
+							"query": [
+								{
+									"key": "isRegistered",
+									"value": "false",
+									"description": "-- filter",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addEmailShopNowButton",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"url\" : \"https://molimor-frontend.netlify.app/shop\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/admin/addEmailShopNowButton",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"admin",
+								"addEmailShopNowButton"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEmailShopNowButton",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "url",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "Image",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/getEmailShopNowButton",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"getEmailShopNowButton"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addsubscribeEmailTemp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "url",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/admin/addsubscribeEmailTemp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"admin",
+								"addsubscribeEmailTemp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "addCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJjZDUyMDQ5NzI0ZDliZDlmZDMzOCIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDcxMTE1NTY1MDgsImlhdCI6MTc0NzExMTU1NiwiZXhwIjoxNzQ5NzAzNTU2LCJpc3MiOiJ0cmFja2luZyJ9.6jXpCk0fs51xy9hWUOl4TjsTt8Bqc72Sm_3jfOhqcBQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "honey",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/4f07c1fd945d81e67b89ce15c75c8bc5cb6526ad (1).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category/admin/addCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"admin",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYyNTUyNjIyNDQsImlhdCI6MTc0NjI1NTI2MiwiZXhwIjoxNzQ4ODQ3MjYyLCJpc3MiOiJ0cmFja2luZyJ9.RwkFcl1GN21hm23B3pGVSkV8eUIF4HPrKRryrof6L9Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/category/getCategoryList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"getCategoryList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getActiveCategoryList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYyNTUyNjIyNDQsImlhdCI6MTc0NjI1NTI2MiwiZXhwIjoxNzQ4ODQ3MjYyLCJpc3MiOiJ0cmFja2luZyJ9.RwkFcl1GN21hm23B3pGVSkV8eUIF4HPrKRryrof6L9Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/category/admin/getActiveCategoryList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"admin",
+								"getActiveCategoryList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/category/getCategoryById/6810a62d59e8d1765fb6f02e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"getCategoryById",
+								"6810a62d59e8d1765fb6f02e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"clothing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category/admin/updateCategory/6810a62d59e8d1765fb6f02e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"admin",
+								"updateCategory",
+								"6810a62d59e8d1765fb6f02e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\" : true   // active = true || inActive = false  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/category/admin/inActiveCategory/6810a62d59e8d1765fb6f02e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"category",
+								"admin",
+								"inActiveCategory",
+								"6810a62d59e8d1765fb6f02e"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subcategory[NO USE]",
+			"item": [
+				{
+					"name": "addSubCategory",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJjZDUyMDQ5NzI0ZDliZDlmZDMzOCIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDc5OTg1OTU5ODUsImlhdCI6MTc0Nzk5ODU5NSwiZXhwIjoxNzUwNTkwNTk1LCJpc3MiOiJ0cmFja2luZyJ9.CQilGkpAJMQ7qPhfs4Tcnyo4sKo5Qcy0srY2jCwBjNk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Green Tea\",\r\n    \"categoryId\" : \"6822d06f049724d9bd9fd35f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/subCategory/admin/addSubCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"subCategory",
+								"admin",
+								"addSubCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSubCategoryList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/subCategory/getSubCategoryList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"subCategory",
+								"getSubCategoryList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getActiveSubCategoryList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/subCategory/getActiveSubCategoryList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"subCategory",
+								"getActiveSubCategoryList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSubCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/subCategory/getSubCategoryById/6810b33725dffa0ed0f89a0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"subCategory",
+								"getSubCategoryById",
+								"6810b33725dffa0ed0f89a0f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"mans\",\r\n    \"categoryId\" : \"6810a62d59e8d1765fb6f02e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/subCategory/admin/updateSubCategory/6810b33725dffa0ed0f89a0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"subCategory",
+								"admin",
+								"updateSubCategory",
+								"6810b33725dffa0ed0f89a0f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveCategory",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\" : true   // active = true || inActive = false  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/subCategory/admin/inActiveSubcategory/6810b33725dffa0ed0f89a0f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"subCategory",
+								"admin",
+								"inActiveSubcategory",
+								"6810b33725dffa0ed0f89a0f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "addSingleProduct",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIyY2Q1MjA0OTcyNGQ5YmQ5ZmQzMzgiLCJjcmVhdGlvbkRhdGVUaW1lIjoxNzQ3MTExMjUwODIzLCJpYXQiOjE3NDcxMTEyNTAsImV4cCI6MTc0OTcwMzI1MCwiaXNzIjoidHJhY2tpbmcifQ.evcrSgaBouUkDXTyEXcbhhKUqxWe9BOhh3KIySjllXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "21Gujarati Khatiyawadi Masala Khichdi",
+									"type": "text"
+								},
+								{
+									"key": "isFeatured",
+									"value": "[Authentic & Flavorful: Crafted with a traditional Gujarati recipe using natural yogurt chickpea flour and a unique spice blend for that true home-style taste,,\nHealthy & Safe: Made with high-quality toxin-free ingredients and no artificial preservatives—perfect for the whole family,,\nQuick & Easy: Just add water boil, and enjoy a delicious ready-to-eat Kadhi in minutes—ideal for busy days or cozy meals.]",
+									"description": " Split the string by double commas (,,) without removing spaces between words",
+									"type": "text"
+								},
+								{
+									"key": "salePrice",
+									"value": "999",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isSale",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "startSaleOn",
+									"value": "2025-05-09",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "endSaleOn",
+									"value": "2025-05-25",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "xperience the authentic flavors of Gujarat with our traditional Gujarati Kadhi, crafted to bring you the true taste of home. This delightful yogurt-based curry is perfect for those who crave a harmonious blend of tangy and spicy flavors, typical of Gujarati cuisine.\n\nWhy Choose Our Gujarati Kadhi?\n\nAuthentic Recipe: Made using a time-tested recipe passed down through generations, our Kadhi retains the classic taste and aroma that makes it a staple in every Gujarati household.\nHigh-Quality Ingredients: We use only the finest and freshest ingredients, including natural yogurt, chickpea flour (besan), and a unique blend of spices, ensuring every bite is a healthy and flavorful experience.\nToxin-Free Promise: True to Molimor’s commitment to health, our Gujarati Kadhi is free from any toxic chemicals and artificial preservatives, making it a safe choice for your family.\nEasy to Prepare: Our Kadhi is simple to cook, making it perfect for a quick meal. Just add water, bring to a boil, and your delicious Kadhi is ready to enjoy!\nServing Suggestions\nPair it with steamed rice, rotis, or your favorite side dishes to make a wholesome meal that’s both nutritious and satisfying. Ideal for a light lunch or a comforting dinner, our Gujarati Kadhi brings a touch of home to your table.\n\nOrder Now\nDon’t miss out on this delicious taste of Gujarat. Order our Gujarati Kadhi today and enjoy a warm, hearty meal that’s both healthy and easy to prepare.",
+									"type": "text"
+								},
+								{
+									"key": "benefits",
+									"value": "100% Organic and Unfiltered\nPacked with Nutrients\nSupports Healthy Living",
+									"type": "text"
+								},
+								{
+									"key": "subCategoryId",
+									"value": "6836c9228ed8a2f99c18a784",
+									"description": "like : 6830579b90d5c3588ff5139a",
+									"type": "text"
+								},
+								{
+									"key": "sku",
+									"value": "Khichdi1",
+									"type": "text"
+								},
+								{
+									"key": "gst",
+									"value": "18",
+									"type": "text"
+								},
+								{
+									"key": "hsnCode",
+									"value": "567432",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "variants",
+									"value": "[{\"weight\": \"Masala Khichdi\", \"price\": 99, \"mrp\": 299}]",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"/C:/Users/PREMIUM/Downloads/e1.jpg",
+										"/C:/Users/PREMIUM/Downloads/e2.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/product/admin/addSingleProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"product",
+								"admin",
+								"addSingleProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateSingleProduct",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJjZDUyMDQ5NzI0ZDliZDlmZDMzOCIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDcyMDA3MzE2ODksImlhdCI6MTc0NzIwMDczMSwiZXhwIjoxNzQ5NzkyNzMxLCJpc3MiOiJ0cmFja2luZyJ9.KhJMLIcuyAr6DChEO1PnqJ6lwwwXRJodr7-0g0vGW1s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Creamy Dark Chocolate Peanut Butter",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isFeatured",
+									"value": "[jdbjsb, hsjsajh]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "weight",
+									"value": "[120g]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "499",
+									"type": "text"
+								},
+								{
+									"key": "mrp",
+									"value": "799",
+									"type": "text"
+								},
+								{
+									"key": "salePrice",
+									"value": "999",
+									"type": "text"
+								},
+								{
+									"key": "isSale",
+									"value": "true",
+									"description": "true false",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Full detailed description of the product.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "benefits",
+									"value": "List of product benefits.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "100",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "quantity",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "isActive",
+									"value": "true",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "hsnCode",
+									"value": "123456",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "gst",
+									"value": "18",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "variants",
+									"value": "[{\"weight\": \"230g\", \"price\": 200, \"mrp\": 250}]",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": [
+										"postman-cloud:///1ef73280-bc9d-4f00-ba06-ac3284a542f3",
+										"/D:/Fensi/fensikotadiya--portfolio/assets/images/technology/aql - Copy - Copy.jpg",
+										"/D:/Fensi/fensikotadiya--portfolio/assets/images/technology/aql - Copy.jpg",
+										"/D:/Fensi/fensikotadiya--portfolio/assets/images/technology/aql.jpg",
+										"/D:/Fensi/fensikotadiya--portfolio/assets/images/technology/bootstrap - Copy - Copy.jpeg",
+										"/D:/Fensi/fensikotadiya--portfolio/assets/images/technology/bootstrap - Copy.jpeg"
+									],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/admin/updateProduct/6822e1922c5a04ac5230bfa0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"admin",
+								"updateProduct",
+								"6822e1922c5a04ac5230bfa0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMxYjJlZWVkYjNhMjgyYjJkNjg1OCIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzEzMTI1NzM4NiwiaWF0IjoxNzQ3MTMxMjU3LCJleHAiOjE3NDk3MjMyNTcsImlzcyI6InRyYWNraW5nIn0.rGGzdZfRyESWRgXv5kY8BvUhGmjBPt7cfyQljxuGeQA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/product/getAllProductsList?subcategoryId=6830579b90d5c3588ff5139a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"product",
+								"getAllProductsList"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "USD",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "Peanut Butter",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "instock",
+									"disabled": true
+								},
+								{
+									"key": "minPrice",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "maxPrice",
+									"value": "1700",
+									"disabled": true
+								},
+								{
+									"key": "minWeight",
+									"value": "5000g",
+									"disabled": true
+								},
+								{
+									"key": "maxWeight",
+									"value": "231g",
+									"disabled": true
+								},
+								{
+									"key": "review",
+									"value": "4",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "userId",
+									"value": "68231b2eeedb3a282b2d6858",
+									"disabled": true
+								},
+								{
+									"key": "subcategoryId",
+									"value": "6830579b90d5c3588ff5139a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/admin/getAllProductsList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/admin/getAllProductsList?currency=USD",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"admin",
+								"getAllProductsList"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "USD"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/product/getProduct?userId=68231b2eeedb3a282b2d6858&subCategoryId=6830579b90d5c3588ff5139a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"product",
+								"getProduct"
+							],
+							"query": [
+								{
+									"key": "currency",
+									"value": "USD",
+									"disabled": true
+								},
+								{
+									"key": "userId",
+									"value": "68231b2eeedb3a282b2d6858"
+								},
+								{
+									"key": "lang",
+									"value": "hi",
+									"disabled": true
+								},
+								{
+									"key": "productId",
+									"value": "6822e1922c5a04ac5230bfa0",
+									"disabled": true
+								},
+								{
+									"key": "subCategoryId",
+									"value": "6830579b90d5c3588ff5139a"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA2MzAzYTIwNDExOGIxNzc3ZWRlYyIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MDQ0MjE2MjcsImlhdCI6MTc0NTkwNDQyMSwiZXhwIjoxNzQ4NDk2NDIxLCJpc3MiOiJ0cmFja2luZyJ9.yGQzalw1TnPahR9A4gRrsWilFxEUz_K_WczjnkoWEtA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/admin/deleteProduct/68106a67a7950733439a4148",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"admin",
+								"deleteProduct",
+								"68106a67a7950733439a4148"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveProductById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MGY0ODAwNjNiOGIzODMyZjkzZWJlNSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MDMwOTA0NjMsImlhdCI6MTc0NTkwMzA5MCwiZXhwIjoxNzQ4NDk1MDkwLCJpc3MiOiJ0cmFja2luZyJ9.sU95DvHhrspJ1zpQWVyZu1kn71d2DrS4ry3NprPvn0U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/admin/inActiveProduct/68106a67a7950733439a4148",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"admin",
+								"inActiveProduct",
+								"68106a67a7950733439a4148"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/product/searchProduct?searchProduct=Creamy Dark&userId=68231b2eeedb3a282b2d6858",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"searchProduct"
+							],
+							"query": [
+								{
+									"key": "searchProduct",
+									"value": "Creamy Dark"
+								},
+								{
+									"key": "userId",
+									"value": "68231b2eeedb3a282b2d6858"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "downloadAddBulkProductTemplate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/product/downloadAddBulkProductTemplate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"downloadAddBulkProductTemplate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadBulkProductsFile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/product_template(2).xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/uploadBulkProductsFile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"uploadBulkProductsFile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPopularProductList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMxYjJlZWVkYjNhMjgyYjJkNjg1OCIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzEzMTI1NzM4NiwiaWF0IjoxNzQ3MTMxMjU3LCJleHAiOjE3NDk3MjMyNTcsImlzcyI6InRyYWNraW5nIn0.rGGzdZfRyESWRgXv5kY8BvUhGmjBPt7cfyQljxuGeQA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/product/getPopularProductList?userId=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"product",
+								"getPopularProductList"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBigSalesProducts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product/getBigSalesProducts?userId=68231b2eeedb3a282b2d6858",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"getBigSalesProducts"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "68231b2eeedb3a282b2d6858"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "wishlist",
+			"item": [
+				{
+					"name": "addToWishlist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWVkYTNmYTU5ODEyNTUxZDFkZWFjOSIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzAyOTc1MDIzMywiaWF0IjoxNzQ3MDI5NzUwLCJleHAiOjE3NDk2MjE3NTAsImlzcyI6InRyYWNraW5nIn0.wsLMJ8jIimaNnfb4B-tjB_eWkIZRxdJYhu39ONPSxBI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\" : \"681b4163ec4fc55ac59a866b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/wishlist/addWishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"wishlist",
+								"addWishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getWishlist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMxYjJlZWVkYjNhMjgyYjJkNjg1OCIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzEzMTI1NzM4NiwiaWF0IjoxNzQ3MTMxMjU3LCJleHAiOjE3NDk3MjMyNTcsImlzcyI6InRyYWNraW5nIn0.rGGzdZfRyESWRgXv5kY8BvUhGmjBPt7cfyQljxuGeQA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/wishlist/getWishlist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"wishlist",
+								"getWishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeFromWishlist",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/wishlist/removeFromWishlist/681b4163ec4fc55ac59a866b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"wishlist",
+								"removeFromWishlist",
+								"681b4163ec4fc55ac59a866b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "addToCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjMxYjJlZWVkYjNhMjgyYjJkNjg1OCIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzEzMTI1NzM4NiwiaWF0IjoxNzQ3MTMxMjU3LCJleHAiOjE3NDk3MjMyNTcsImlzcyI6InRyYWNraW5nIn0.rGGzdZfRyESWRgXv5kY8BvUhGmjBPt7cfyQljxuGeQA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"items\": [\r\n    {\r\n      \"productId\": \"6822e1922c5a04ac5230bfa0\",\r\n      \"quantity\": 1,\r\n      \"weight\" : \"120g\",\r\n      \"price\" : 786,\r\n      \"mrp\" : 8789\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/addToCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"addToCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCartByProductId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 3,\r\n    \"weight\": \"120g\",\r\n    \"price\": 786,\r\n    \"mrp\": 8789\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart/updateCartByProductId/681096eccff5fca7e058bebe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"updateCartByProductId",
+								"681096eccff5fca7e058bebe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserCart",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjFjZDQ1OTgzZWRkY2E4YzZkYjAzNyIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzA0NjA3MjE3MiwiaWF0IjoxNzQ3MDQ2MDcyLCJleHAiOjE3NDk2MzgwNzIsImlzcyI6InRyYWNraW5nIn0.wCg4CObORD-BoaQnpSoE2npYKo6zrf_svXcl2gBRph0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/getUserCart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"getUserCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCartByProductId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDU5MTc2MjEyNDIsImlhdCI6MTc0NTkxNzYyMSwiZXhwIjoxNzQ4NTA5NjIxLCJpc3MiOiJ0cmFja2luZyJ9.UGj4-PtSpEiAzI1ytSmxCDJyutgjpM01qVeq3sUSNCQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/deleteCartByProductId/681096eccff5fca7e058bebe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"deleteCartByProductId",
+								"681096eccff5fca7e058bebe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserCartAndWishListCount",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjFjZDQ1OTgzZWRkY2E4YzZkYjAzNyIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzA0NjA3MjE3MiwiaWF0IjoxNzQ3MDQ2MDcyLCJleHAiOjE3NDk2MzgwNzIsImlzcyI6InRyYWNraW5nIn0.wCg4CObORD-BoaQnpSoE2npYKo6zrf_svXcl2gBRph0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/cart/getUserCartAndWishListCount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart",
+								"getUserCartAndWishListCount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "placeOrder",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjU3MzVkZDJmMmE4ZWE1ZWUwYzE0MSIsInJvbGUiOiJ1c2VyIiwiY3JlYXRpb25EYXRlVGltZSI6MTc0NzM3NDQ1NzA2NSwiaWF0IjoxNzQ3Mzc0NDU3LCJleHAiOjE3NDk5NjY0NTcsImlzcyI6InRyYWNraW5nIn0.1q-82FcMfdZtSKz0c8epxX0GL3C9zJCRYUnFQ2wHjYs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fname\": \"Amit\",\r\n    \"lname\": \"Sharma\",\r\n    \"cartItems\": [\r\n        {\r\n            \"productId\": \"6822e1922c5a04ac5230bfa0\",\r\n            \"quantity\": 2,\r\n            \"price\": 500,\r\n            \"discountType\": \"percentage\",\r\n            \"discountValue\": 25 \r\n        },\r\n          {\r\n            \"productId\": \"682310f09d75afdbd4f743f3\",\r\n            \"quantity\": 2,\r\n            \"price\": 500,\r\n            \"discountType\": \"percentage\",\r\n            \"discountValue\": 25 \r\n        }\r\n    ],\r\n    \"paymentMethod\": \"cod\", // valid = cod, ccavenue,\r\n    \"streetAddress\": [\r\n        \"123, MG Road\" // line1\r\n         // line2\r\n    ],\r\n    \"country\": \"India\",\r\n    \"state\": \"Maharashtra\",\r\n    \"pincode\": \"400001\",\r\n    \"shippingAddress\": [\r\n        \"123, MG Road\" // line1\r\n         // line2\r\n    ],\r\n    \"shippingCountry\" : \"regf\", \r\n    \"shippingState\" : \"ref\", \r\n    \"shippingPincode\" : 67576,\r\n    \"shippingCharge\": \"free\",\r\n    \"mobile\": \"9876543210\",\r\n    \"email\": \"amit.sharma@example.com\"\r\n    // \"orderNote\": \"Please deliver between 10 AM to 2 PM.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/order/placeOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"placeOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUserOrders",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/getAllUserOrders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"getAllUserOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUserOrders",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/admin/getAllOrders?status=&customerId&startDate&endDate&page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"admin",
+								"getAllOrders"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": ""
+								},
+								{
+									"key": "customerId",
+									"value": null
+								},
+								{
+									"key": "startDate",
+									"value": null
+								},
+								{
+									"key": "endDate",
+									"value": null
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/order/getOrderById/800811",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"order",
+								"getOrderById",
+								"800811"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "banner",
+			"item": [
+				{
+					"name": "addBanner",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIyY2Q1MjA0OTcyNGQ5YmQ5ZmQzMzgiLCJjcmVhdGlvbkRhdGVUaW1lIjoxNzQ3MTExMjUwODIzLCJpYXQiOjE3NDcxMTEyNTAsImV4cCI6MTc0OTcwMzI1MCwiaXNzIjoidHJhY2tpbmcifQ.evcrSgaBouUkDXTyEXcbhhKUqxWe9BOhh3KIySjllXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/481174692_604624009057613_3459222300104476423_n.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/banner/admin/addBanner/6822e1922c5a04ac5230bfa0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"banner",
+								"admin",
+								"addBanner",
+								"6822e1922c5a04ac5230bfa0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBanner",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/banner/getAllBanner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"banner",
+								"getAllBanner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/getAllBanner",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/banner/admin/adminGetAllBanner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"banner",
+								"admin",
+								"adminGetAllBanner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBannerById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/banner/admin/deleteBannerById/68120959945a85a4575203cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"banner",
+								"admin",
+								"deleteBannerById",
+								"68120959945a85a4575203cc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveBannerById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/banner/admin/inActiveBannerById/68120959945a85a4575203cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"banner",
+								"admin",
+								"inActiveBannerById",
+								"68120959945a85a4575203cc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "shopbannerHome",
+			"item": [
+				{
+					"name": "addBannerForShopNow",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIyY2Q1MjA0OTcyNGQ5YmQ5ZmQzMzgiLCJjcmVhdGlvbkRhdGVUaW1lIjoxNzQ3MTExMjUwODIzLCJpYXQiOjE3NDcxMTEyNTAsImV4cCI6MTc0OTcwMzI1MCwiaXNzIjoidHJhY2tpbmcifQ.evcrSgaBouUkDXTyEXcbhhKUqxWe9BOhh3KIySjllXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/9d52c4c08e86484d2609bc78ece7a335cd4dedb7.png"
+								},
+								{
+									"key": "mobileImage",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/1-ltr-groundnut-Oil.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/banner/admin/addBannerForShopNow?productId=6822e1922c5a04ac5230bfa0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"banner",
+								"admin",
+								"addBannerForShopNow"
+							],
+							"query": [
+								{
+									"key": "productId",
+									"value": "6822e1922c5a04ac5230bfa0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBannerForShopNow",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3002/api/banner/getAllBannerForShopNow",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3002",
+							"path": [
+								"api",
+								"banner",
+								"getAllBannerForShopNow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteShopNowBannerById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/banner/admin/deleteShopNowBannerById/68120959945a85a4575203cc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"banner",
+								"admin",
+								"deleteShopNowBannerById",
+								"68120959945a85a4575203cc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "certificate",
+			"item": [
+				{
+					"name": "addCertificate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJjZDUyMDQ5NzI0ZDliZDlmZDMzOCIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDcxMTE1NTY1MDgsImlhdCI6MTc0NzExMTU1NiwiZXhwIjoxNzQ5NzAzNTU2LCJpc3MiOiJ0cmFja2luZyJ9.6jXpCk0fs51xy9hWUOl4TjsTt8Bqc72Sm_3jfOhqcBQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/44edaefd16cd5a3b4aa03e08e7724f4a439ff5b7.jpg"
+								},
+								{
+									"key": "description",
+									"value": "Molimor have come up with multiple FMCG products with the concept of providing best & totally toxic chemicals free products to the world. Molimor is a company that specialises in manufacturing and exporting a variety of FMCG products. We have in-house processing plants which are based in Gujarat which is widely known as the heart of Indian FMCG market. All this products are cultivated adhering to the highest standards of quality control.",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "9",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/certificate/addCertificate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"certificate",
+								"addCertificate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCertificate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/certificate/getAllCertificate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"certificate",
+								"getAllCertificate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/getAllCertificate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/certificate/admin/getAllCertificate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"certificate",
+								"admin",
+								"getAllCertificate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCertificateById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/certificate/deleteCertificateById/681211b1c3e5ba040e99bd80",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"certificate",
+								"deleteCertificateById",
+								"681211b1c3e5ba040e99bd80"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveCertificateById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/certificate/inActiveCertificateById/681211b1c3e5ba040e99bd80",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"certificate",
+								"inActiveCertificateById",
+								"681211b1c3e5ba040e99bd80"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "media",
+			"item": [
+				{
+					"name": "addMedia",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIyY2Q1MjA0OTcyNGQ5YmQ5ZmQzMzgiLCJjcmVhdGlvbkRhdGVUaW1lIjoxNzQ3MTExMjUwODIzLCJpYXQiOjE3NDcxMTEyNTAsImV4cCI6MTc0OTcwMzI1MCwiaXNzIjoidHJhY2tpbmcifQ.evcrSgaBouUkDXTyEXcbhhKUqxWe9BOhh3KIySjllXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/a3ad4e213133c648af0f80f6a07e6e51b06e616c (1).png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/admin/addMedia",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"addMedia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addVideoUrl",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIyY2Q1MjA0OTcyNGQ5YmQ5ZmQzMzgiLCJjcmVhdGlvbkRhdGVUaW1lIjoxNzQ3MTExMjUwODIzLCJpYXQiOjE3NDcxMTEyNTAsImV4cCI6MTc0OTcwMzI1MCwiaXNzIjoidHJhY2tpbmcifQ.evcrSgaBouUkDXTyEXcbhhKUqxWe9BOhh3KIySjllXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vdoUrl\" : \"https://www.youtube.com/shorts/Yj0nU7zYiFY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/admin/addVideoUrl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"addVideoUrl"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/getAllMedia/img/vdo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"description": "// type : img / vdo ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/admin/getAllMedia/vdo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"getAllMedia",
+								"vdo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllMedia/img/vdo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/getAllMedia/vdo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"getAllMedia",
+								"vdo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMediaById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/admin/deleteMediaById/68130966c2df5523c1d791c9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"deleteMediaById",
+								"68130966c2df5523c1d791c9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveMediaById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\" : true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/admin/inActiveMediaById/68130966c2df5523c1d791c9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"inActiveMediaById",
+								"68130966c2df5523c1d791c9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addInstaShop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIyY2Q1MjA0OTcyNGQ5YmQ5ZmQzMzgiLCJjcmVhdGlvbkRhdGVUaW1lIjoxNzQ3MTExMjUwODIzLCJpYXQiOjE3NDcxMTEyNTAsImV4cCI6MTc0OTcwMzI1MCwiaXNzIjoidHJhY2tpbmcifQ.evcrSgaBouUkDXTyEXcbhhKUqxWe9BOhh3KIySjllXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/Sweeten your Valentine’s Day naturally!   Whether for yourself or someone special, Molimor adds love to every bite. #MolimorLoveGrab Yours Today!  Visit your nearest store or  shop online now! (link in bio)#Molim.jpg"
+								},
+								{
+									"key": "url",
+									"value": "https://www.instagram.com/p/DGCj4frtewD/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/admin/addInstaShop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"addInstaShop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllInstaShop",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/getAllInstaShop",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"getAllInstaShop"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "addReview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\" : 4,\r\n    \"productId\" : \"6810b6b20ea8ff8449ac06ec\",\r\n    \"name\": \"test\",\r\n    \"email\" : \"test@gmail.com\",\r\n    \"comment\" : \"comment comment commentcomment comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/review/addReview",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"addReview"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllReviewByProductId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/review/getAllReviewByProductId/681096eccff5fca7e058bebe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"getAllReviewByProductId",
+								"681096eccff5fca7e058bebe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin/getAllReviewByProductId",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/review/getAllReviewByProductId/681096eccff5fca7e058bebe?lang=hi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"getAllReviewByProductId",
+								"681096eccff5fca7e058bebe"
+							],
+							"query": [
+								{
+									"key": "lang",
+									"value": "hi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveReview",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\" : \"681096eccff5fca7e058bebe\",\r\n    \"isActive\" : true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/review/admin/inActiveReview/68109549baa6a8bfc92f9c61",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"admin",
+								"inActiveReview",
+								"68109549baa6a8bfc92f9c61"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "about",
+			"item": [
+				{
+					"name": "addAbout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2ODIyY2Q1MjA0OTcyNGQ5YmQ5ZmQzMzgiLCJjcmVhdGlvbkRhdGVUaW1lIjoxNzQ3MTExMjUwODIzLCJpYXQiOjE3NDcxMTEyNTAsImV4cCI6MTc0OTcwMzI1MCwiaXNzIjoidHJhY2tpbmcifQ.evcrSgaBouUkDXTyEXcbhhKUqxWe9BOhh3KIySjllXM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "p1",
+									"value": "Molimor have come up with multiple FMCG products with the concept of providing best & totally toxic chemicals free products to the world. Molimor is a company that specialises in manufacturing and exporting a variety of FMCG products. We have in-house processing plants which are based in Gujarat which is widely known as the heart of Indian FMCG market. All this products are cultivated adhering to the highest standards of quality control.",
+									"type": "text"
+								},
+								{
+									"key": "p2",
+									"value": "Picking up the products offered by us over the regular ones is an effective decision for personal as well as planetary health. Our products are toxic chemicals free, rich in nutrition & sustainable in nature. With us, you will get access to a wide variety of best products to safe guard your family.",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://youtu.be/a9cdiullDPs?si=MQxcT-qaKf5Adyc3",
+									"type": "text"
+								},
+								{
+									"key": "p3",
+									"value": "Molimor is a part of Shree Hari Group(SHG) Established over 20 years ago at Surat Gujarat, from where our global footprint stretches across few countries. We are the globally network chain group who has carved a niche in our field by adapting a Five-tier approach towards nation growth & health management. Molimor is the upcoming global company behind one of the fastest-growing health awareness communities which offers scientifically developed products & clinically proven plans to help achieve lifelong transformation in customers life.",
+									"type": "text"
+								},
+								{
+									"key": "p4",
+									"value": "At Molimor, we believe in offering products free from toxic chemicals, ensuring a safer and healthier experience for everyone. We understand the importance of nutrition and its impact on overall health. Therefore, our products are carefully developed to be rich in essential nutrients, promoting a balanced and nourishing lifestyle.",
+									"type": "text"
+								},
+								{
+									"key": "box1T",
+									"value": "Our Mission",
+									"type": "text"
+								},
+								{
+									"key": "box1D",
+									"value": "Our team builds the innovation process creating our surrounding Green Hub  by producing sustainable products in FMCG sector prioritizing health well-being of our every consumer.",
+									"type": "text"
+								},
+								{
+									"key": "box2T",
+									"value": "Our Vision",
+									"type": "text"
+								},
+								{
+									"key": "box2D",
+									"value": "We have infinite eye to make every family Rich in Health by delivering our high nutritious and protein products to generate Eco-Friendly valued chain.",
+									"type": "text"
+								},
+								{
+									"key": "box3T",
+									"value": "Core Value",
+									"type": "text"
+								},
+								{
+									"key": "box3D",
+									"value": "To improve the quality of life of our customers, ensure that our products meet the quality & standards as set by our management, this are stringent and adhere to the quality acceptable over world for safe human consumption & we make sure to work on ethical principles that provide a healthy growth environment for our nation, customers & employees which lead to an all-round healthy living approach.",
+									"type": "text"
+								},
+								{
+									"key": "boxFtr",
+									"value": "To help us realize our vision, we have five enduring values on which the business has been built.",
+									"type": "text"
+								},
+								{
+									"key": "p5",
+									"value": "Molimor is a prominent company specializing in manufacturing and exporting a wide range of FMCG (Fast-Moving Consumer Goods) products, with a strong foothold in the golden heart of the Indian FMCG market, Gujarat. Molimor is dedicated to providing the best products while prioritizing the health and well-being of our customers.",
+									"type": "text"
+								},
+								{
+									"key": "p6",
+									"value": "What sets Molimor apart is our commitment to sustainability. We recognize the importance of preserving our planet for future generations, so we strive to produce sustainable products. By choosing Molimor, you are not only prioritizing your health but also actively participating in environmental conservation.",
+									"type": "text"
+								},
+								{
+									"key": "p7",
+									"value": "At Molimor, we believe in offering products free from toxic chemicals, ensuring a safer and healthier experience for everyone. We understand the importance of nutrition and its impact on overall health. Therefore, our products are carefully developed to be rich in essential nutrients, promoting a balanced and nourishing lifestyle.",
+									"type": "text"
+								},
+								{
+									"key": "p8",
+									"value": "Molimor aims to safeguard your family's well-being with our diverse range of products. Whether it's household essentials or other FMCG products, we have covered you. Our stringent quality control measures ensure that every product meets the highest standards of excellence.",
+									"type": "text"
+								},
+								{
+									"key": "img",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/6746c211cf1bc84b66167636ba9f02ad944941fd (1).png"
+								},
+								{
+									"key": "box1Img",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/02bdc2bb94405e1988368981987181c26ca22deb.png"
+								},
+								{
+									"key": "box2Img",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/eb5b8571f8f429e9077f8edc5befb943d68a3021.png"
+								},
+								{
+									"key": "box3Img",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/2b325cf99ae6388c22a2a3bdd92f40617931d06a.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/about/addAbout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"about",
+								"addAbout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAbout",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/about/getAbout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"about",
+								"getAbout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "inActiveReview",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\" : \"681096eccff5fca7e058bebe\",\r\n    \"isActive\" : true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/review/admin/inActiveReview/68109549baa6a8bfc92f9c61",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"admin",
+								"inActiveReview",
+								"68109549baa6a8bfc92f9c61"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "socialAccount",
+			"item": [
+				{
+					"name": "addSocialAccountURL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"facebook\": \"https://www.fb.com/\",\r\n  \"instagram\": \"https://www.inst.com/\",\r\n  \"linkedin\": \"https://www.linkedin.com/\",\r\n  \"twitter\": \"https://www.x.com/\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/media/admin/addSocialAccountURL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"addSocialAccountURL"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addVideoUrl",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/media/getSocialAccountURL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"getSocialAccountURL"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "companyinfo",
+			"item": [
+				{
+					"name": "admin/addCompanyinfo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJjZDUyMDQ5NzI0ZDliZDlmZDMzOCIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDcxMzU5MDA2ODYsImlhdCI6MTc0NzEzNTkwMCwiZXhwIjoxNzQ5NzI3OTAwLCJpc3MiOiJ0cmFja2luZyJ9.aPWvrGokRuE8QM5fjnAbi3GXqIPWv9a25N2VSpEKZ8w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"content\": \"We are a Surat-based company specializing in textile and garment manufacturing with a focus on innovation and quality.\",\r\n  \"address\": \"Block No. 26, Ekta Industrial Estate., Pipodara GIDC, Dist. SURAT-394110, Gujarat(BHARAT)\",\r\n  \"mobile\": \"+91 90811 11299\",\r\n  \"email\": \"Info@molimor.co\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/contact/admin/addCompanyinfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"contact",
+								"admin",
+								"addCompanyinfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCompanyinfo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/contact/getCompanyinfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"contact",
+								"getCompanyinfo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contactUs",
+			"item": [
+				{
+					"name": "addContactUs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYxNjA5OTcxNDcsImlhdCI6MTc0NjE2MDk5NywiZXhwIjoxNzQ4NzUyOTk3LCJpc3MiOiJ0cmFja2luZyJ9.gh_r5bqlf3Hc2c8HpsNQUABx0YmMDhpHpdrQM6S-Mfw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Ravi Kumar1\",\r\n  \"email\": \"ravikumar@example.in\",\r\n  \"message\": \"I am interested in bulk purchasing. Please share the pricing details.\",\r\n  \"inquiryType\": \"Bulk Order\"\r\n//   \"moq\": 100\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/contact/addContactUs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"contact",
+								"addContactUs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContactUs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/contact/admin/getContactUs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"contact",
+								"admin",
+								"getContactUs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "marketPlace",
+			"item": [
+				{
+					"name": "addMarketPlace",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjJjZDUyMDQ5NzI0ZDliZDlmZDMzOCIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDcxMTE1NTY1MDgsImlhdCI6MTc0NzExMTU1NiwiZXhwIjoxNzQ5NzAzNTU2LCJpc3MiOiJ0cmFja2luZyJ9.6jXpCk0fs51xy9hWUOl4TjsTt8Bqc72Sm_3jfOhqcBQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/PREMIUM/Downloads/Frame.png"
+								},
+								{
+									"key": "link",
+									"value": "https://www.flipkart.com/search?q=MOLIMOR&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.29.224:3000/api/media/admin/addMarketPlace",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"29",
+								"224"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"admin",
+								"addMarketPlace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMarketPlace",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/media/getMarketPlace",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"media",
+								"getMarketPlace"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "addCoupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsInJvbGUiOiJhZG1pbiIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDcwNDExODkyMjcsImlhdCI6MTc0NzA0MTE4OSwiZXhwIjoxNzQ5NjMzMTg5LCJpc3MiOiJ0cmFja2luZyJ9.sJAk9MWgu17b0oCa8ILJQKMY7RrMtnsQTcPYEfff23U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"NEWYEAR25\",\r\n    \"description\": \"Get 25% off on all orders above ₹1000\",\r\n    \"discountType\": \"percentage\",\r\n    \"discountValue\": 25,\r\n    \"minPurchase\": 1000,\r\n    \"maxPurchase\": 5000,\r\n    \"validFrom\": \"2025-01-01T00:00:00.000Z\",\r\n    \"validTo\": \"2025-01-31T23:59:59.999Z\"\r\n  }\r\n// {\r\n//     \"productId\": \"681b4163ec4fc55ac59a866b\",\r\n//     \"code\": \"113NEWYEAR24\",\r\n//     \"description\": \"Get 30 rupee off\",\r\n//     \"discountType\": \"fixed\", // fixed\r\n//     \"discountValue\": 30,\r\n//     \"validFrom\": \"2025-05-01\",\r\n//     \"validTo\": \"2025-05-25\"\r\n// }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.29.224:3000/api/coupon/admin/addCoupon",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"29",
+								"224"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"coupon",
+								"admin",
+								"addCoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCouponById",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/coupon/getCouponById/681c36e5a663d21b78c31dbd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"coupon",
+								"getCouponById",
+								"681c36e5a663d21b78c31dbd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCouponList",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/coupon/getAllCouponList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"coupon",
+								"getAllCouponList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCouponById",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Get 25% off on all orders above ₹100\",\r\n    \"discountType\": \"percentage\", // fixed\r\n    \"discountValue\": 25,\r\n    \"minPurchase\": 100,\r\n    \"maxPurchase\": 500,\r\n    \"validFrom\": \"2025-01-01T00:00:00.000Z\",\r\n    \"validTo\": \"2025-01-31T23:59:59.999Z\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/coupon/admin/updateCouponById/681c36e5a663d21b78c31dbd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"coupon",
+								"admin",
+								"updateCouponById",
+								"681c36e5a663d21b78c31dbd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCouponById",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYwMDQ5NDY5NjgsImlhdCI6MTc0NjAwNDk0NiwiZXhwIjoxNzQ4NTk2OTQ2LCJpc3MiOiJ0cmFja2luZyJ9.S6vTJsiMOzLAYdLsgDBAdblZBWoCzQ6psXKNG9woh2M",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/coupon/admin/deleteCouponById/681c36e5a663d21b78c31dbd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"coupon",
+								"admin",
+								"deleteCouponById",
+								"681c36e5a663d21b78c31dbd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateCoupon",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTA5NTQ5YmFhNmE4YmZjOTJmOWM2MSIsImNyZWF0aW9uRGF0ZVRpbWUiOjE3NDYxNjA5OTcxNDcsImlhdCI6MTc0NjE2MDk5NywiZXhwIjoxNzQ4NzUyOTk3LCJpc3MiOiJ0cmFja2luZyJ9.gh_r5bqlf3Hc2c8HpsNQUABx0YmMDhpHpdrQM6S-Mfw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"NEWYEAR25\",\r\n    \"item\": [\r\n        {\r\n            \"productId\": \"681d922d854a3763150997b3\",\r\n            \"price\": 499\r\n        },\r\n        {\r\n            \"productId\": \"681d9216854a3763150997b2\",\r\n            \"price\": 9998\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://192.168.29.224:3000/api/coupon/validateCoupon",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"29",
+								"224"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"coupon",
+								"validateCoupon"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.844.0",
+    "axios": "^1.9.0",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "email-templates": "^12.0.2",
+    "express": "^5.1.0",
+    "firebase": "^11.7.1",
+    "firebase-admin": "^13.3.0",
+    "fs": "^0.0.1-security",
+    "html-pdf-node": "^1.0.8",
+    "joi": "^17.13.3",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.0",
+    "multer": "^1.4.5-lts.2",
+    "nodemailer": "^7.0.3",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7",
+    "xlsx": "^0.18.5"
+  }
+}
