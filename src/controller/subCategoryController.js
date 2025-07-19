@@ -66,7 +66,7 @@ export async function getSubCategoryList(req, res) {
 export async function getActiveSubCategoryList(req, res) {
     try {
         const subCategories = await subCategoryModel.find({ isActive: true }).populate("categoryId").sort({ createdAt: -1 });
-
+console.log('subCategories', subCategories)
         const grouped = {};
 
         subCategories.forEach(subCat => {
@@ -77,7 +77,7 @@ export async function getActiveSubCategoryList(req, res) {
             const categoryId = category._id.toString();
 
             if (!grouped[categoryId]) {
-                grouped[categoryId] = { categoryId: category._id, categoryName: category.name, subCategories: [], };
+                grouped[categoryId] = { categoryId: category._id, categoryName: category.name, banners: category?.banners, subCategories: [], };
             };
             grouped[categoryId].subCategories.push({ _id: subCat._id, name: subCat.name, image: subCat.image, isActive: subCat.isActive, createdAt: subCat.createdAt, });
         });
