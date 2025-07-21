@@ -7,7 +7,9 @@ import constants from '../utils/constants.js';
 const { resStatusCode, resMessage } = constants;
 
 export async function addSubCategory(req, res) {
-    const image = req.uploadedImages[0].s3Url;
+    console.log('req.uploadedImages', req.uploadedImages);
+    const image = req.uploadedImages.find(file => file.field === 'image');
+    console.log('image', image);
     const { name, categoryId } = req.body;
     req.body.image = image;
     const { error } = subCategoryValidation.validate(req.body);
@@ -66,7 +68,6 @@ export async function getSubCategoryList(req, res) {
 export async function getActiveSubCategoryList(req, res) {
     try {
         const subCategories = await subCategoryModel.find({ isActive: true }).populate("categoryId").sort({ createdAt: -1 });
-console.log('subCategories', subCategories)
         const grouped = {};
 
         subCategories.forEach(subCat => {
@@ -111,21 +112,25 @@ export async function getSubCategoryById(req, res) {
 
 export async function updateSubCategory(req, res) {
     const { name, categoryId } = req.body;
+    const image = req.uploadedImages.find(file => file.field === 'image');
+    req.body.image = image?.s3Url || "";
+
     const { error } = subCategoryValidation.validate(req.body, req.params);
     if (error) {
-        return response.error(res, req?.languageCode, req.languageCode, resStatusCode.CLIENT_ERROR, error.details[0].message);
+        return response.error(res, req?.languageCode, resStatusCode.CLIENT_ERROR, error.details[0].message);
     };
     try {
         const updateSubCategory = await subCategoryModel.findByIdAndUpdate(
-            req.params.id,
-            { name, categoryId },
+            { _id: req.params.id },
+            { name, categoryId, image: req.body.image },
             { new: true }
         );
         if (!updateSubCategory) {
             return response.error(res, req?.languageCode, resStatusCode.FORBIDDEN, resMessage.SUBCATEGORY_NOT_FOUND, {});
         };
-        return response.success(res, req?.languageCode, resStatusCode.ACTION_COMPLETE, resMessage.SUBCATEGORY_UPDATED, updateSubCategory);
+        return response.success(res, req?.languageCode, resStatusCode.ACTION_COMPLETE, resMessage.SUBCATEGORY_UPDATED, {});
     } catch (error) {
+        console.log(error);
         return response.error(res, req?.languageCode, resStatusCode.INTERNAL_SERVER_ERROR, resMessage.INTERNAL_SERVER_ERROR, {});
     };
 };

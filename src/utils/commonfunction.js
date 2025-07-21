@@ -38,15 +38,20 @@ export async function handleBackgroundTasks(order, user, cartItems) {
             const gstCharge = (price * gstRate / 100) * quantity;
             const itemTotal = price * quantity + gstCharge;
 
-            Object.assign(item, {
-                name: product.title,
-                hsn: product.hsnCode,
-                gst: gstRate,
-                quantity,
-                price,
-                sku: product.sku,
-                taxableValue: itemTotal
-            });
+            await cartModel.updateOne(
+                { userId: user.id },
+                { $pull: { items: { productId: { $in: cartItems.map(i => i.productId) } } } }
+            ),
+
+                Object.assign(item, {
+                    name: product.title,
+                    hsn: product.hsnCode,
+                    gst: gstRate,
+                    quantity,
+                    price,
+                    sku: product.sku,
+                    taxableValue: itemTotal
+                });
 
             subTotal += itemTotal;
             csgst += gstCharge;
@@ -106,10 +111,6 @@ export async function handleBackgroundTasks(order, user, cartItems) {
                     title: '🛒 New Order Placed!',
                     body: `Order #${orderId} by ${fullName} for ₹${totalAmount}`
                 },
-            ),
-            cartModel.updateOne(
-                { userId: user.id },
-                { $pull: { items: { productId: { $in: cartItems.map(i => i.productId) } } } }
             ),
         ]);
     } catch (err) {

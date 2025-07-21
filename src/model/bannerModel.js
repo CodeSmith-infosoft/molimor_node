@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const bannerSchema = new Schema({
   image: { type: String, required: true },
-  productId: { type: Schema.Types.ObjectId, ref: 'products' },
+  productId: { type: Schema.Types.ObjectId, ref: 'products', require: false },
   bannerType: { type: String, required: true },
   isDelete: { type: Boolean, default: false },
   isActive: { type: Boolean, default: true },

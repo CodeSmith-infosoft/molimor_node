@@ -32,16 +32,15 @@ export async function getAllBanner(req, res) {
         if (!bannerList.length) {
             return response.error(res, req?.languageCode, resStatusCode.FORBIDDEN, resMessage.BANNER_LIST_EMPTY, []);
         };
-
-        //         const updatedBannerList = await Promise.all(
-        //             bannerList.map(async (banner) => {
-        //                 const formattedImage = banner.image.startsWith("/banner/")
-        // //                     ? banner.image
-        // // banner.image}`;
-        //                 return { ...banner._doc, image: formattedImage, };
-        //             })
-        //         );
-        return response.success(res, req?.languageCode, resStatusCode.ACTION_COMPLETE, resMessage.BANNER_LIST_FETCHED, bannerList);
+        const groupedBanners = bannerList.reduce((acc, banner) => {
+            const type = banner.bannerType;
+            if (!acc[type]) {
+                acc[type] = [];
+            };
+            acc[type].push(banner);
+            return acc;
+        }, {});
+        return response.success(res, req?.languageCode, resStatusCode.ACTION_COMPLETE, resMessage.BANNER_LIST_FETCHED, groupedBanners);
     } catch (err) {
         console.error("Error in getAllBanner:", err);
         return response.error(res, req?.languageCode, resStatusCode.INTERNAL_SERVER_ERROR, resMessage.INTERNAL_SERVER_ERROR, {});
