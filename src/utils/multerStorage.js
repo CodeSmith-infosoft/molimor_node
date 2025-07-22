@@ -158,7 +158,8 @@ const saveLocally = async (file, folderName, filePrefix, fieldname) => {
         field: fieldname,
         fileName: filename,
         originalName: file.originalname,
-        s3Url: `http://192.168.29.44:${process.env.PORT}/${folderName}/${filename}`,
+        // s3Url: `http://192.168.29.44:${process.env.PORT}/${folderName}/${filename}`,
+        s3Url: `https://molimornode-production.up.railway.app/${folderName}/${filename}`,
     };
 };
 

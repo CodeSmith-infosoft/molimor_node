@@ -7,6 +7,7 @@ const { resStatusCode, resMessage } = constants;
 export async function addBanner(req, res) {
     const productId = req.body?.productId;
     const bannerType = req.body.bannerType;
+    const category = req.body.category;
     const image = req.uploadedImages.find(file => file.field === 'image');
     const { error } = bannerValidation.validate({ image: image.s3Url, productId, bannerType });
     if (error) {
@@ -16,6 +17,7 @@ export async function addBanner(req, res) {
         const addbanner = await bannerModel.create({
             image: image.s3Url,
             productId,
+            category,
             bannerType,
         });
         return response.success(res, req?.languageCode, resStatusCode.ACTION_COMPLETE, resMessage.BANNER_ADDED, addbanner);
