@@ -26,9 +26,10 @@ const __dirname = dirname(__filename);
 
 export async function addSingleProduct(req, res) {
     const mainImage = req.uploadedImages.find(file => file.field === 'mainImage');
-    const image = req.uploadedImages.find(file => file.field === 'image');
-    console.log('image', image)
-    console.log('mainImage', mainImage)
+    const imageUrls = req.uploadedImages
+        .filter(file => file.field === 'image')
+        .map(file => file.s3Url);
+    req.body.mainImage = mainImage?.s3Url;
 
     const { brand, title, isFeatured, variants, description, benefits, subCategoryId, sku, hsnCode, gst, stock, quantity, buyItWith, isActive } = req.body;
 
@@ -65,8 +66,8 @@ export async function addSingleProduct(req, res) {
         const createnewProduct = new productModel({
             ...req.body,
             gst: gst + "%",
-            mainImage: mainImage,
-            image: image,
+            mainImage: mainImage.s3Url,
+            image: imageUrls,
             buyItWith
         });
         await createnewProduct.save();
@@ -470,63 +471,60 @@ export async function getProductById(req, res) {
 export async function updateSingleProduct(req, res) {
     const { id } = req.params;
 
-    req.body.variants = req.body.variants.map(variant => ({
-        ...variant,
-        price: parseInt(variant.price),
-        mrp: parseInt(variant.mrp),
-
-        discountPrice:
-            variant.discountPrice
-                ? parseInt(variant.discountPrice)
-                : undefined,
-
-        startSaleOn: variant.startSaleOn
-            ? variant.startSaleOn
-            : undefined,
-
-        endSaleOn: variant.endSaleOn
-            ? variant.endSaleOn
-            : undefined,
-
-        saleStatus: variant.saleStatus ?? undefined
-    }));
-
-    const { error } = updateProductValidation.validate(req.body);
-    if (error) {
-        return response.error(res, req.languageCode, resStatusCode.CLIENT_ERROR, error.details[0].message);
-    };
-
     try {
         const existingProduct = await productModel.findById(id);
         if (!existingProduct) {
             return response.error(res, req?.languageCode, resStatusCode.FORBIDDEN, resMessage.NO_PRODUCTS_FOUND, {});
-        };
+        }
 
+        // Parse uploaded image URLs
         const mainImage = req.uploadedImages.find(file => file.field === 'mainImage');
-        const image = req.uploadedImages.find(file => file.field === 'image');
-        let mainImages = existingProduct.mainImage;
-        let updatedImages = existingProduct.image;
+        const imageUrls = req.uploadedImages
+            .filter(file => file.field === 'image')
+            .map(file => file.s3Url);
+        req.body.mainImage = mainImage?.s3Url;
+        req.body.image = imageUrls;
+        console.log('mainImage', mainImage);
+        console.log('imageUrls', imageUrls);
+        // Prepare updated variants
+        if (req.body.variants && Array.isArray(req.body.variants)) {
+            req.body.variants = req.body.variants.map(variant => ({
+                ...variant,
+                price: parseInt(variant.price),
+                mrp: parseInt(variant.mrp),
+                discountPrice: variant.discountPrice ? parseInt(variant.discountPrice) : undefined,
+                startSaleOn: variant.startSaleOn || undefined,
+                endSaleOn: variant.endSaleOn || undefined,
+                saleStatus: variant.saleStatus ?? undefined
+            }));
+        }
 
-        if (mainImage.length > 0) {
-            mainImages = uploadedFiles;
-        };
-        if (image.length > 0) {
-            updatedImages = uploadedFiles;
-        };
+        // Remove SKU if present to prevent updates
         delete req.body.sku;
+
+        // Validate updated data
+        const { error } = updateProductValidation.validate(req.body);
+        if (error) {
+            return response.error(res, req.languageCode, resStatusCode.CLIENT_ERROR, error.details[0].message);
+        }
+
+        // Build updated product data
         const updatedData = {
             ...req.body,
             gst: req.body.gst,
-            image: updatedImages,
-            mainImages: mainImages,
+            ...(mainImage && { mainImage: mainImage?.s3Url }),
+            ...(imageUrls.length > 0 && { image: imageUrls })
         };
-        const updatedProduct = await productModel.findByIdAndUpdate(id, updatedData, { new: true, });
+
+        const updatedProduct = await productModel.findByIdAndUpdate(id, updatedData, { new: true });
         return response.success(res, req?.languageCode, resStatusCode.ACTION_COMPLETE, resMessage.PRODUCT_UPDATED, updatedProduct);
+
     } catch (error) {
-        console.error(error);
+        console.error('updateSingleProduct Error:', error);
         return response.error(res, req?.languageCode, resStatusCode.INTERNAL_SERVER_ERROR, resMessage.INTERNAL_SERVER_ERROR, {});
-    };
-};
+    }
+}
+
 
 export async function toggleActiveStateById(req, res) {
     const { id } = req.params;

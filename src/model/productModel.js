@@ -3,12 +3,13 @@ import mongoose, { Schema as _Schema, model } from 'mongoose';
 const { Schema } = mongoose;
 
 const productSchema = new Schema({
+    brand: { type: String, required: true },
     title: { type: String, required: true },
     isFeatured: { type: [String], required: true },
     variants: [
         {
             _id: false,
-            weight: { type: String, required: true },
+            weight: { type: String, required: false },
             price: { type: Number, required: true },
             mrp: { type: Number, required: true },
             discountPrice: { type: Number },
@@ -25,7 +26,7 @@ const productSchema = new Schema({
     ],
     benefits: { type: [String], required: true },
     subCategoryId: { type: _Schema.Types.ObjectId, ref: 'sub_categorys' },
-    mainImage: [{ type: String }],
+    mainImage: { type: String, required: true, },
     image: [{ type: String }],
     sku: { type: String, required: true, unique: true },
     hsnCode: { type: Number, required: true },
@@ -48,10 +49,8 @@ const productSchema = new Schema({
 const productModel = model('products', productSchema);
 
 const variantSchema = Joi.object({
-    weight: Joi.string().required().messages({
+    weight: Joi.string().optional().messages({
         'string.base': 'Weight must be a string',
-        'string.empty': 'Weight is required',
-        'any.required': 'Weight is required',
     }),
     price: Joi.number().required().messages({
         'number.base': 'Price must be a number',
@@ -81,6 +80,13 @@ const buyItWithSchema = Joi.object({
 
 // addProduct
 const productValidation = Joi.object({
+    brand: Joi.string().min(3).max(200).required().messages({
+        'string.base': 'Brand must be a string',
+        'string.empty': 'Brand is required',
+        'string.min': 'Brand must be at least 3 characters',
+        'string.max': 'Brand cannot exceed 100 characters',
+        'any.required': 'Brand is required'
+    }),
     title: Joi.string().min(3).max(200).required().messages({
         'string.base': 'Title must be a string',
         'string.empty': 'Title is required',
@@ -200,6 +206,13 @@ const productValidation = Joi.object({
 
 // upadte product
 const updateProductValidation = Joi.object({
+    brand: Joi.string().min(3).max(200).required().messages({
+        'string.base': 'Brand must be a string',
+        'string.empty': 'Brand is required',
+        'string.min': 'Brand must be at least 3 characters',
+        'string.max': 'Brand cannot exceed 100 characters',
+        'any.required': 'Brand is required'
+    }),
     title: Joi.string().min(3).max(200).required().messages({
         'string.base': 'Title must be a string',
         'string.empty': 'Title is required',
@@ -225,15 +238,32 @@ const updateProductValidation = Joi.object({
             'array.min': 'At least one variant is required',
             'any.required': 'Variants are required',
         }),
-    description: Joi.string().required().messages({
-        'string.base': 'Description must be a string',
-        'string.empty': 'Description is required',
-        'any.required': 'Description is required',
+    description: Joi.array().items(
+        Joi.object({
+            h: Joi.string().required().messages({
+                'string.base': 'Heading must be a string',
+                'string.empty': 'Heading is required',
+                'any.required': 'Heading is required'
+            }),
+            p: Joi.string().required().messages({
+                'string.base': 'Paragraph must be a string',
+                'string.empty': 'Paragraph is required',
+                'any.required': 'Paragraph is required'
+            })
+        })
+    ).required().messages({
+        'array.base': 'Description must be an array of objects',
+        'array.includesRequiredUnknowns': 'Each description item must contain heading and paragraph',
+        'any.required': 'Description is required'
     }),
-    benefits: Joi.string().required().messages({
-        'string.base': 'Benefits must be a string',
-        'string.empty': 'Benefits is required',
-        'any.required': 'Benefits is required',
+    benefits: Joi.array().items(
+        Joi.string().required().messages({
+            'string.base': 'Each benefit must be a string',
+            'string.empty': 'Benefit cannot be empty'
+        })
+    ).required().messages({
+        'array.base': 'Benefits must be an array of strings',
+        'any.required': 'Benefits are required'
     }),
     salePrice: Joi.number().optional().messages({
         'number.base': 'Sale price must be a number',
@@ -260,17 +290,16 @@ const updateProductValidation = Joi.object({
     mainImage: Joi.string().required().messages({
         'string.pattern.base': 'Each image must be a valid image filename (jpg, jpeg, png, gif, webp)',
         'string.empty': 'Image name cannot be empty',
-        'string.base': 'Each image must be a string',
+        'string.base': 'mainImage : Each image must be a string',
     }),
-    image: Joi.array()
-        .items(Joi.string().required().messages({
-            'string.pattern.base': 'Each image must be a valid image filename (jpg, jpeg, png, gif, webp)',
-            'string.empty': 'Image name cannot be empty',
-            'string.base': 'Each image must be a string',
-        })).max(5).messages({
-            'array.base': 'Image must be an array',
-            'array.max': 'You can upload a maximum of 5 images',
-        }),
+    image: Joi.array().items(Joi.string().required().messages({
+        'string.pattern.base': 'Each image must be a valid image filename (jpg, jpeg, png, gif, webp)',
+        'string.empty': 'Image name cannot be empty',
+        'string.base': 'Image : Each image must be a string',
+    })).max(5).messages({
+        'array.base': 'Image must be an array',
+        'array.max': 'You can upload a maximum of 5 images',
+    }),
     stock: Joi.number().integer().min(0).default(0).messages({
         'number.base': 'Stock must be a number',
         'number.integer': 'Stock must be an integer',

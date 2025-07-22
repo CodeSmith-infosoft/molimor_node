@@ -163,8 +163,6 @@ const saveLocally = async (file, folderName, filePrefix, fieldname) => {
     };
 };
 
-
-
 const storage = multer.memoryStorage();
 export const createS3Uploader = ({ folderName, filePrefix = '', fieldType = 'single', fieldName, customFields = [], fileSizeMB, } = {}) => {
     const limits = {
