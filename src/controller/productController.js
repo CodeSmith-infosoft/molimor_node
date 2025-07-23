@@ -26,9 +26,7 @@ const __dirname = dirname(__filename);
 
 export async function addSingleProduct(req, res) {
     const mainImage = req.uploadedImages.find(file => file.field === 'mainImage');
-    const imageUrls = req.uploadedImages
-        .filter(file => file.field === 'image')
-        .map(file => file.s3Url);
+    const imageUrls = req.uploadedImages.filter(file => file.field === 'image').map(file => file.s3Url);
     req.body.mainImage = mainImage?.s3Url;
 
     const { brand, title, isFeatured, variants, description, benefits, subCategoryId, sku, hsnCode, gst, stock, quantity, buyItWith, isActive } = req.body;
