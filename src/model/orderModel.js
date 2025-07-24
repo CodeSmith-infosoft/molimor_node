@@ -7,7 +7,7 @@ const orderSchema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: 'users', required: true },
   orderId: { type: Number, required: true, unique: true },
   fname: { type: String, required: true },
-  lname: { type: String, required: true },
+  lname: { type: String, required: false },
   items: [{
     productId: { type: Schema.Types.ObjectId, ref: 'products', required: true },
     quantity: { type: Number, required: true, min: 1 },
@@ -79,12 +79,7 @@ const orderValidation = Joi.object({
     'string.min': 'First Name must be at least 1 characters long',
     'any.required': 'First Name is required'
   }),
-  lname: Joi.string().min(1).required().messages({
-    'string.base': 'Last Name must be a string',
-    'string.empty': 'Last Name is required',
-    'string.min': 'Last Name must be at least 1 characters long',
-    'any.required': 'Last Name is required'
-  }),
+  lname: Joi.string().optional(),
   cartItems: Joi.array().items(itemValidation).min(1).required().messages({
     'array.base': 'cartItems must be an array',
     'array.min': 'At least one item is required',
