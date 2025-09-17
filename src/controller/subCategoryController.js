@@ -12,6 +12,7 @@ export async function addSubCategory(req, res) {
     console.log('imagesss', image);
     const { name, categoryId } = req.body;
     req.body.image = image.s3Url;
+    console.log('req.body.image',req.body.image);
     const { error } = subCategoryValidation.validate(req.body);
     if (error) {
         return response.error(res, req.languageCode, resStatusCode.CLIENT_ERROR, error.details[0].message);
@@ -24,7 +25,7 @@ export async function addSubCategory(req, res) {
         const lastCategory = await subCategoryModel.findOne().sort({ subcategoryNum: -1 });
         const newSubcategoryNum = typeof lastCategory?.subcategoryNum === 'number' ? lastCategory?.subcategoryNum + 1 : 101;
 
-        const newSubcategory = new subCategoryModel({ name, categoryId, subcategoryNum: newSubcategoryNum, image });
+        const newSubcategory = new subCategoryModel({ name, categoryId, subcategoryNum: newSubcategoryNum, image: req.body.image });
         await newSubcategory.save();
         return response.success(res, req?.languageCode, resStatusCode.ACTION_COMPLETE, resMessage.SUBCATEGORY_ADDED, newSubcategory);
     } catch (error) {
