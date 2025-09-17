@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 
 const categorySchema = new Schema({
   name: { type: String, required: true },
-  productId: { type: _Schema.Types.ObjectId, ref: 'products' },
+  productId: { type: _Schema.Types.ObjectId, ref: 'products', require:false },
   banners: { type: [String] },
   isActive: { type: Boolean, default: true },
 }, { timestamps: true }); 
@@ -27,11 +27,8 @@ const categoryValidation = Joi.object({
   ).optional().messages({
     'array.base': 'Banners must be an array of strings.'
   }),
-  productId: Joi.string().min(3).max(100).required().messages({
+  productId: Joi.string().optional().messages({
     'string.base': 'ProductId must be a text value.',
-    'string.empty': 'ProductId is required and cannot be empty.',
-    'string.min': 'ProductId must be at least 3 characters long.',
-    'string.max': 'ProductId cannot be longer than 100 characters.',
     'any.required': 'ProductId is required.',
   }),
   isActive: Joi.boolean().valid(true, false).default(true).messages({
