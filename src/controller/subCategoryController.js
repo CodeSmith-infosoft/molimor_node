@@ -9,9 +9,9 @@ const { resStatusCode, resMessage } = constants;
 export async function addSubCategory(req, res) {
     console.log('req.uploadedImages', req.uploadedImages);
     const image = req.uploadedImages.find(file => file.field === 'image');
-    console.log('image', image);
+    console.log('imagesss', image);
     const { name, categoryId } = req.body;
-    req.body.image = image;
+    req.body.image = image.s3Url;
     const { error } = subCategoryValidation.validate(req.body);
     if (error) {
         return response.error(res, req.languageCode, resStatusCode.CLIENT_ERROR, error.details[0].message);
