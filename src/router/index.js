@@ -14,6 +14,7 @@ import aboutRoutes from './aboutRoutes.js';
 import contactRoutes from './contactUsRoutes.js';
 import couponRoutes from './couponRoutes.js'
 import homeRoutes from './homeRoutes.js'
+import deliveryRoutes from './deliveryRoutes.js'
 
 const router = Router();
 
@@ -32,5 +33,6 @@ router.use('/about', aboutRoutes);
 router.use('/contact', contactRoutes);
 router.use('/coupon', couponRoutes);
 router.use('/home', homeRoutes);
+router.use('/delivery', deliveryRoutes);
 
 export default router;
