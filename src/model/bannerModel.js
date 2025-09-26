@@ -6,7 +6,7 @@ const bannerSchema = new Schema({
   image: { type: String, required: true },
   productId: { type: Schema.Types.ObjectId, ref: 'products', require: false },
   bannerType: { type: String, required: true },
-  category: { type: String, required: true },
+  // category: { type: String, required: true },
   isDelete: { type: Boolean, default: false },
   isActive: { type: Boolean, default: true },
 }, { timestamps: true });
@@ -25,9 +25,9 @@ const bannerValidation = Joi.object({
   productId: Joi.string().optional().messages({
     'string.base': 'Product ID must be a string',
   }),
-  category: Joi.string().optional().messages({
-    'string.base': 'category must be a string',
-  }),
+  // category: Joi.string().optional().messages({
+  //   'string.base': 'category must be a string',
+  // }),
   isDelete: Joi.boolean().default(false),
   isActive: Joi.boolean().default(true)
 });
